@@ -22,4 +22,32 @@
 
 + `ContributionWorkbenchAdapter`
 + `PackageNodeWorkbenchAdapter`
-+ ``
+
+
+## 5）国际化
+
+### 代码里的国际化
+```java
+
+public class NLSMessage extends NLS {
+
+	private static final String BUNDLE_NAME = NLSMessage.class.getName(); //$NON-NLS-1$
+
+	private NLSMessage() {
+		super();
+	}
+	
+	static {
+		NLS.initializeMessages(BUNDLE_NAME, NLSMessage.class);
+	}
+	
+	public static String SPRING_SERVICE;
+	
+	public static String SPRING_CONTROLLER;
+	
+	// ...
+```
+然后在这个类的相同的路径下新建国化化属性文件 `NLSMessage_zh_CN.properties`, `NLSMessage.properties`, ...
+
+### 插件描述信息
+在项目跟径下新建 `plugin.properties`, `plugin_zh_CN.properties`；引用方式:可用于插件概览/扩展配置等，语法：`%key`
