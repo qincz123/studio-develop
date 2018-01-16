@@ -6,6 +6,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
@@ -20,6 +21,7 @@ import com.primeton.studio.navigator.ProjectNavigator;
 public class NewXyzWizard extends BasicNewResourceWizard {
 	
 	private WizardNewFileCreationPage firstPage;
+	private NewXyzSecondPage secondPage;
 	
 	@Override
 	public void addPages() {
@@ -33,9 +35,25 @@ public class NewXyzWizard extends BasicNewResourceWizard {
 		firstPage.setMessage("This a Xyz wizard messsage.");
 		
 		addPage(firstPage);
+		
+		secondPage = new NewXyzSecondPage();
+		//secondPage.setXXX
+		addPage(secondPage);
+	}
+	
+	
+
+    @Override
+	public IWizardPage getNextPage(IWizardPage page) {
+		if (page instanceof NewXyzWizardPage) {
+			return secondPage;
+		}
+		return super.getNextPage(page);
 	}
 
-    public boolean performFinish() {
+
+
+	public boolean performFinish() {
         IFile file = firstPage.createNewFile();
         if (file == null) {
 			return false;

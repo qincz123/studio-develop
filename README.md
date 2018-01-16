@@ -12,7 +12,9 @@
 
 
 ## 3）form编辑器
-参考ESB代码
+参考:
++ ESB代码
++ PTP `ConnectionObjectEditor.java` 数源源新建或编辑向导
 
 ## 4）隐藏节点
 1）按标准模式扩展的节点，可以直接删除插件项目即可  
