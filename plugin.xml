@@ -9,22 +9,25 @@
             type="xyz">
       </modelFactory>
    </extension>
-   <extension
+<!--   <extension
          point="com.primeton.studio.core.adapter">
       <factory
-            adaptableType="org.eclipse.core.internal.resources.Folder"
+            adaptableType="com.primeton.studio.runtime.node.impl.PackageRootNode"
             class="com.mu.jup.studio.extension.adapter.XyzNodeWorkbenchAdapter">
-         <enablement></enablement>
          <adapter
                class="org.eclipse.ui.model.IWorkbenchAdapter">
          </adapter>
+         <adapter
+               class="org.eclipse.ui.model.IWorkbenchAdapter2">
+         </adapter>
       </factory>
-   </extension>
+   </extension> -->
    <extension
          point="com.primeton.studio.ui.imageRepository">
       <repository
+            bundleName="com.primeton.studio.navigator"
             image="icons/m2.gif"
-            name="com.primeton.studio.runtime.node.impl.PackageRootNode">
+            name="com.primeton.studio.runtime.core.internal.PackageRoot.Xyz">
       </repository>
    </extension>
    <extension
