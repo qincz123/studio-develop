@@ -31,8 +31,8 @@
       </repository>
       <repository
             bundleName="com.primeton.studio.navigator"
-            image="icons/debug.gif"
-            name="file">
+            image="icons/lock_ovr.gif"
+            name="xyz">
       </repository>
    </extension>
    <extension
@@ -49,6 +49,17 @@
             name="MU"
             parentCategory="com.primeton.studio.workbench.wizard">
       </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.mu.jup.studio.extension.editors.XyzEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xyz"
+            icon="icons/m2.gif"
+            id="com.mu.jup.studio.extension.editors.XyzEditor"
+            name="Xyz 编辑器">
+      </editor>
    </extension>
 
 </plugin>
