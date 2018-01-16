@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.primeton.studio.runtime.modelFactory">
+      <modelFactory
+            class="com.mu.jup.studio.extension.factory.XyzModelFactory"
+            resource="folder"
+            type="xyz">
+      </modelFactory>
+   </extension>
+   <extension
+         point="com.primeton.studio.core.adapter">
+      <factory
+            adaptableType="org.eclipse.core.internal.resources.Folder"
+            class="com.mu.jup.studio.extension.adapter.XyzNodeWorkbenchAdapter">
+         <enablement></enablement>
+         <adapter
+               class="org.eclipse.ui.model.IWorkbenchAdapter">
+         </adapter>
+      </factory>
+   </extension>
+   <extension
+         point="com.primeton.studio.ui.imageRepository">
+      <repository
+            image="icons/m2.gif"
+            name="com.primeton.studio.runtime.node.impl.PackageRootNode">
+      </repository>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="com.mu.jup.studio.extension.mu"
+            class="com.mu.jup.studio.extension.wizard.NewXyzWizard"
+            icon="icons/pom_obj.gif"
+            id="com.mu.jup.studio.extension.wizard.NewXyzWizard"
+            name="New Xyz">
+      </wizard>
+      <category
+            id="com.mu.jup.studio.extension.mu"
+            name="MU"
+            parentCategory="com.primeton.studio.workbench.wizard">
+      </category>
+   </extension>
+
+</plugin>
