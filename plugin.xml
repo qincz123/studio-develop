@@ -29,6 +29,11 @@
             image="icons/m2.gif"
             name="com.primeton.studio.runtime.core.internal.PackageRoot.Xyz">
       </repository>
+      <repository
+            bundleName="com.primeton.studio.navigator"
+            image="icons/debug.gif"
+            name="file">
+      </repository>
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">

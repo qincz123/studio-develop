@@ -6,6 +6,7 @@ import com.mu.jup.studio.extension.Activator;
 import com.primeton.studio.navigator.IProjectNavigator;
 import com.primeton.studio.navigator.base.AbstractWorkbenchAdapter;
 
+@Deprecated
 public class XyzNodeWorkbenchAdapter extends AbstractWorkbenchAdapter {
 	
 	@Override
